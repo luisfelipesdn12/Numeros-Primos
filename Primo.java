@@ -8,11 +8,15 @@ public class Primo {
         for (int n = 2; true; n++) {
             boolean add = true;
 
-            for (int p: primos) {
+            for (int p : primos) {
+                if (p > Math.sqrt(n)) {
+                    break;
+                }
+
                 if (n % p == 0) {
                     add = false;
                     break;
-                } 
+                }
             }
 
             if (add == true) {

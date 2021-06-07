@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	primos := []int{}
@@ -9,6 +12,10 @@ func main() {
 		add := true
 
 		for i := 0; i < len(primos); i++ {
+			if primos[i] > int(math.Sqrt(float64(n))) {
+				break
+			}
+
 			if n%primos[i] == 0 {
 				add = false
 				break
